@@ -1,66 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIBRARIAN</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
-<body color="#E3F2FD">
-        <font color="#0D47A1">
-        <MARQUEE id="top">ВІТАЄМО НА САЙТІ ПРОЄКТУ LIBRARIAN</MARQUEE>
-        <h1 align="center">LIBRARIAN</h1>
-        </font>
-        <font color="#878787">
-        <blockquote>
-            Проєкт «Librarian» — автономна система локального семантичного пошуку документів. 
-            Замість пошуку за ключовими словами програма використовує векторні представлення тексту 
-            (на основі моделі intfloat/multilingual-e5-small) та базу даних SQLite з розширенням sqlite-vec для знаходження файлів за їх змістом. 
-            Система працює виключно на локальному комп'ютері, не потребуючи підключення до інтернету. Це гарантує
-            абсолютну конфіденційність даних та швидкий пошук файлів (≈0.2 секунди).
-        </blockquote>
-        </font>
-        <hr color="#0D47A1">
-        
-        <font color ="#0D47A1"><h3 align="center">Основна ідея і результати</h3></font>
-        <font color="#878787">
-        <blockquote> 
+<body>
+    <ul class="menu">
+            <li><a href="index.html">Головна сторінка</a></li>
+            <li><a href="photo.html">Фото</a></li>
+            <li><a href="buy.html">Види ліцензій</a></li>
+        </ul>
+    <marquee id="top">ВІТАЄМО НА САЙТІ ПРОЄКТУ LIBRARIAN</marquee>
+
+    <h1>LIBRARIAN</h1>
+
+    <blockquote>
+        Проєкт «Librarian» — автономна система локального семантичного пошуку документів. 
+        Замість пошуку за ключовими словами програма використовує векторні представлення тексту 
+        (на основі моделі intfloat/multilingual-e5-small) та базу даних SQLite з розширенням sqlite-vec для знаходження файлів за їх змістом. 
+        Система працює виключно на локальному комп'ютері, не потребуючи підключення до інтернету. Це гарантує
+        абсолютну конфіденційність даних та швидкий пошук файлів (≈0.2 секунди).
+    </blockquote>
+
+    <hr>
+    
+    <h3 class="center">Основна ідея і результати</h3>
+    <div class="container">
+    <p>
 У сучасних умовах користувачі накопичують великі обсяги локальних текстових даних, якими стає складно керувати. Стандартні засоби пошуку операційних систем базуються виключно на точному збігу ключових слів. Якщо користувач формулює запит інакше або використовує синоніми, потрібний файл не буде знайдено. 
 Основна ідея проєкту «Librarian» полягає у створенні швидкої, автономної та інтелектуальної системи семантичного пошуку, яка орієнтується на контекст та загальний зміст документа.
 Для вирішення проблеми розроблено алгоритм на основі векторних представлень тексту. 
 У реалізації використано мову програмування Python, базу даних sqlite з розширенням sqlite-vec, модель для ембеддингу intfloat/multilingual-e5-small, а також фреймворк flet для інтерфейсу.
 Під час індексації програма сканує вибрану директорію та виявляє файли форматів txt, pdf та docx. Для оптимізації ресурсів система перевіряє час останньої зміни файлів та індексує лише нові або змінені документи. Зчитаний текст автоматично розбивається на фрагменти для збільшення точності пошуку. Після цього кожен фрагмент опрацьовується через локальну багатомовну модель intfloat/multilingual-e5-small. Модель перетворює текст у числовий вектор розмірністю 384 елементи. Отриманн
-        </blockquote>
-        </font>
-        <hr color="#0D47A1">
-        <h3>інформація про мене</h3>
-        <ul>
-            <li>навчаюсь в коледжі</li>
-            <li>вивчаю HTML</li>
-        </ul>
-        <h3>Партнери фірми</h3>
-        <ol>
-            <li>Григорій</li>
-            <li>Інокентій</li>
-            <li>Северин</li>
-        </ol>
-        <a href="photo.html">
-            <p>Фото</p>
-        </a>
-        <a href="buy.html">
-            <p>Види ліцензій</p>
-        </a>
-            <img src="https://blenderartists.org/uploads/default/original/4X/0/2/7/027560b3757c57deb6f01339c1a271abac3934f9.jpeg" usemap="#image-map" width="50%">
+    </p>
+</div>
 
-<map name="image-map">
-    <area target="" alt="" title="" href="photo.html" coords="356,422,566,65" shape="rect">
-    <area target="" alt="" title="" href="buy.html" coords="205,395,75" shape="circle">
-</map>
-        <b><h3 color="#0D47A1">Контакти</h3></b>
+    <hr>
+    <h3>інформація про мене</h3>
+    <ul>
+        <li>навчаюсь в коледжі</li>
+        <li>вивчаю HTML</li>
+    </ul>
+
+    <h3>Партнери фірми</h3>
+    <ol>
+        <li>Григорій</li>
+        <li>Інокентій</li>
+        <li>Северин</li>
+    </ol>
+    <div class="container">
+        <table>
+        <tr>
+            <th>Технологія</th>
+            <th>Використання в проєкті</th>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>Основна мова програмування</td>
+        </tr>
+        <tr>
+            <td>SQLite</td>
+            <td>Локальна база даних</td>
+        </tr>
+        <tr>
+            <td>sqlite-vec</td>
+            <td>Розширення для роботи з векторними даними</td>
+        </tr>
+        <tr>
+            <td>intfloat/multilingual-e5-small</td>
+            <td>Модель для ембеддингу тексту</td>
+        </tr>
+    </table>
+    </div>
+
+    <div class="center">
+        <img src="https://blenderartists.org/uploads/default/original/4X/0/2/7/027560b3757c57deb6f01339c1a271abac3934f9.jpeg" usemap="#image-map" width="50%">
+    </div>
+
+    <map name="image-map">
+        <area target="" alt="" title="" href="photo.html" coords="356,422,566,65" shape="rect">
+        <area target="" alt="" title="" href="buy.html" coords="205,395,75" shape="circle">
+    </map>
+
+    <div id="contacts">
+        <h3>Контакти</h3>
+        <p>
             <a href="https://www.instagram.com/svvvyyat" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/717/717392.png" alt="inst" width="15">
-                <a href="mailto:vitkosviatoslav@gmail.com"><br>vitkosviatoslav@gmail.com</a>
+                vitkosviatoslav@gmail.com
             </a>
+        </p>
         <p>Номер телефону:<i> +380 (98) 391-30-04</i></p>
-        <a href="#top"><p>На початок сторінки</p></a>
+    </div>
+
+    <div class="center" style="margin-top: 15px;">
+        <a href="#top" class="btn">На початок сторінки</a>
+    </div>
 </body>
 </html>
